@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# サブディレクトリパスにアップしたものが読み込まれない問題
+[Next.jsで静的ビルドしたソースコードをサブディレクトリパスにデプロイする方法 | zenn](https://zenn.dev/chot/articles/99ae6acca1429b)
+
+# This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 

@@ -1,6 +1,12 @@
+
+const isProd = process.env.NODE_ENV === 'production'
+const prefixPath = !isProd ? '/260277p/maze_solver_3d' : ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  assetPrefix: prefixPath,
+  basePath: prefixPath,
+  reactStrictMode: true,
   trailingSlash: true,
   output: "export",
   images: {
