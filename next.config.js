@@ -11,6 +11,7 @@ const nextConfig = {
   assetPrefix: prefixPath,
   basePath: prefixPath,
   reactStrictMode: true,
+  trailingSlash: true,
   output: "export",
   images: {
     unoptimized: true,
