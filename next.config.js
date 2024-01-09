@@ -7,8 +7,7 @@ const nextConfig = {
   assetPrefix: prefixPath,
   basePath: prefixPath,
   reactStrictMode: true,
-  trailingSlash: true,
-  output: "export",
+  output: "standalone",
   images: {
     unoptimized: true,
   },
