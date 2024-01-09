@@ -1,3 +1,4 @@
+/** <a href="https://www.ugs.kochi-tech.ac.jp/260277p/maze_solver_3d/"> */
 
 Maze_Generation stage;
 Ui ui;
@@ -8,7 +9,7 @@ void settings() {
     // この関数は省略可能で、定義されていない場合、Processingはデフォルトの設定を使用します。
     size(1024, 576);
     randomSeed(1);
-    
+
     // 5以上の奇数
     stage = new Maze_Generation(37);
     ui = new Ui();
@@ -23,7 +24,8 @@ void setup() {
 
 int i = 0;
 void draw() {
-    // draw()関数は、setup()の後に繰り返し呼び出されます。通常、1秒間に約60回呼び出され、連続的なアニメーションや動的な描画を行うために使用されます。
+    // draw()関数は、setup()の後に繰り返し呼び出されます。
+    //通常、1秒間に約60回呼び出され、連続的なアニメーションや動的な描画を行うために使用されます。
     // draw()には、フレームごとに更新される描画コードが含まれます。
     background(100,100,100);
     strokeWeight(0);

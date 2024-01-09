@@ -26,11 +26,6 @@ export default function RootLayout({
       <head>
         <GoogleAnalytics />
         {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" /> */}
-        {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
-        /> */}
       </head>
       <body
         className={`${inter.className} relative flex min-h-screen flex-col`}
@@ -42,7 +37,7 @@ export default function RootLayout({
               href="/"
               className="mx-auto block max-w-fit p-3 text-xl font-semibold text-black"
             >
-              1260277
+              Maze Solver 3D - 1260277
             </Link>
             <div className="m-3 text-gray-500">
               2024 高知工科大学 情報学群 浅野友哉 1260277.

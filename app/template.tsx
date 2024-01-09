@@ -26,7 +26,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
               href="/"
               className=" text-xl font-semibold sm:flex-nowrap sm:justify-start sm:py-6"
             >
-              1260277
+              Maze Solver 3D - 1260277
             </Link>
           </h1>
           <div className="ms:max-w-fit hs-collapse flex items-center justify-center overflow-hidden">
