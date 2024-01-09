@@ -1,5 +1,27 @@
 # サブディレクトリパスにアップしたものが読み込まれない問題
-[Next.jsで静的ビルドしたソースコードをサブディレクトリパスにデプロイする方法 | zenn](https://zenn.dev/chot/articles/99ae6acca1429b)
+
+[Next.jsで静的ビルドしたソースコードをサブディレクトリパスにデプロイする方法 | zenn](https://zenn.dev/chot/articles/99ae6acca1429b) 参考サイト
+
+```js
+/* 本番環境と開発環境の分岐用のフラグ */
+const isProd = process.env.NODE_ENV === 'production'
+
+/* 公開時のサブディレクトリ */
+const SUB_DIRECTORY = "/260277p/maze_solver_3d";
+const prefixPath = isProd ? SUB_DIRECTORY : ''
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  assetPrefix: prefixPath,
+  basePath: prefixPath,
+  …
+};
+module.exports = nextConfig;
+```
+
+# 403エラーが偶発的に起こる問題
+
+build時に名前が自動的に変わるファイルにサーバー側で権限がついていなかった
 
 # This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
