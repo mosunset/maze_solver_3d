@@ -87,7 +87,7 @@ public class Maze_Generation{
     // 迷路生成 穴掘り法
     private void generate_stage(int ny,int nx) {
         ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(0, 1, 2, 3));
-        Collections.shuffle(array); // ランダムに行く方向を決める
+        Collections.shuffle(array); // ランダム方向
 
         for (int i : array) {
 

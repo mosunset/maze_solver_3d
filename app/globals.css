@@ -40,6 +40,49 @@ code {
 #description {
   margin: 6px;
 }
+#description h2:first {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+#description h2 {
+  font-size: 1.5rem;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  border-bottom-width: 2px;
+  border-style: solid;
+  border-color: #000000;
+}
+#description h2::before {
+  content: "# ";
+}
+
+#description h3 {
+  font-size: 1.25rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: rgb(68, 68, 68);
+}
+#description h3::before {
+  content: "# ";
+}
+
+#description p {
+  font-size: 1rem;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+#description p::before {
+  content: "";
+}
+
+#description .flex {
+  margin: 8px;
+}
 
 body {
   min-width: 370px;

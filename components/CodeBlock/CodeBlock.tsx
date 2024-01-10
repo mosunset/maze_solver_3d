@@ -40,24 +40,24 @@ export default function CodeBlock(props: Props) {
       /\<\/span\>    /gm,
       '</span><span class="bg-purple-200">    </span>',
     )
-    .replace(/\<\/span\>    /gm, '<span class="bg-red-400">    </span>')
-    .replace(/\<\/span\>    /gm, '</span><span class="bg-pink-400">    </span>')
+    .replace(/\<\/span\>    /gm, '<span class="bg-red-300">    </span>')
+    .replace(/\<\/span\>    /gm, '</span><span class="bg-pink-300">    </span>')
     .replace(
       /\<\/span\>    /gm,
-      '</span><span class="bg-yellow-400">    </span>',
+      '</span><span class="bg-yellow-300">    </span>',
     )
     .replace(
       /\<\/span\>    /gm,
-      '</span><span class="bg-green-400">    </span>',
+      '</span><span class="bg-green-300">    </span>',
     )
-    .replace(/\<\/span\>    /gm, '</span><span class="bg-blue-400">    </span>')
+    .replace(/\<\/span\>    /gm, '</span><span class="bg-blue-300">    </span>')
     .replace(
       /\<\/span\>    /gm,
-      '</span><span class="bg-indigo-400">    </span>',
+      '</span><span class="bg-indigo-300">    </span>',
     )
     .replace(
       /\<\/span\>    /gm,
-      '</span><span class="bg-purple-400">    </span>',
+      '</span><span class="bg-purple-300">    </span>',
     );
   return (
     <div>

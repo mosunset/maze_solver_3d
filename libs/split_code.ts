@@ -49,3 +49,15 @@ export const split = (
     return;
   }
 };
+
+export const all = (file: string) => {
+  try {
+    let code = readFileSync(file, "utf8");
+    return code
+      .replace(/^\s+?(\r\n|\n|\r)/gm, "$1")
+      .replace(/^\s+?(\r\n|\n|\r)/gm, "$1")
+      .replace(/^\s+?(\r\n|\n|\r)/gm, "$1");
+  } catch (error) {
+    return;
+  }
+};
