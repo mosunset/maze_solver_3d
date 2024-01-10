@@ -6,7 +6,6 @@ import CodeBlock from "@/components/CodeBlock/CodeBlock";
 
 import { readFileSync } from "fs";
 import path from "path";
-import { Console } from "console";
 
 const loadFiles = () => {
   const files = ["maze", "maze_generation", "ui"];
@@ -32,13 +31,20 @@ const Code = () => {
   return (
     <>
       <div>
-        {files.map((file) => (
-          <div key={file.name}>
-            <div className="mb-4 text-2xl">{file.name}</div>
-            <div className="mb-8 p-4 border rounded-lg overflow-x-scroll border-gray-700">
+        <div className="text-2xl mb-4">コード一覧</div>
+        {files.map((file, index) => (
+          <details key={file.name}>
+            <summary className="mb-2 sm:-mb-4 text-xl group hover:underline ">
+              {file.name}
+              <span className="text-right inline-block w-full sm:-translate-y-7 groupe hover:underline">
+                クリックで開閉
+              </span>
+            </summary>
+            <div>
+              {/* <p>{file.name}</p> */}
               <CodeBlock language="processing" code={file.code} />
             </div>
-          </div>
+          </details>
         ))}
       </div>
     </>

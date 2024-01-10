@@ -15,12 +15,55 @@ type Props = {
 
 export default function CodeBlock(props: Props) {
   // Processingで書かれたコードをハイライトする
-  const highlightedCode: string = hljs.highlight(props.code, {
-    language: props.language,
-  }).value;
+  const highlightedCode: string = hljs
+    .highlight(props.code, {
+      language: props.language,
+    })
+    .value.replace(/^\s+?(\r\n|\n|\r)/gm, "$1")
+    .replace(/^\s+?(\r\n|\n|\r)/gm, "$1")
+    .replace(/^    /gm, '<span class="bg-red-200">    </span>')
+    .replace(/\<\/span\>    /gm, '</span><span class="bg-pink-200">    </span>')
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-yellow-200">    </span>',
+    )
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-green-200">    </span>',
+    )
+    .replace(/\<\/span\>    /gm, '</span><span class="bg-blue-200">    </span>')
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-indigo-200">    </span>',
+    )
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-purple-200">    </span>',
+    )
+    .replace(/\<\/span\>    /gm, '<span class="bg-red-400">    </span>')
+    .replace(/\<\/span\>    /gm, '</span><span class="bg-pink-400">    </span>')
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-yellow-400">    </span>',
+    )
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-green-400">    </span>',
+    )
+    .replace(/\<\/span\>    /gm, '</span><span class="bg-blue-400">    </span>')
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-indigo-400">    </span>',
+    )
+    .replace(
+      /\<\/span\>    /gm,
+      '</span><span class="bg-purple-400">    </span>',
+    );
   return (
-    <pre>
-      <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
-    </pre>
+    <div>
+      <pre className="mb-4 p-2 border rounded-lg overflow-x-auto border-gray-700">
+        <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+      </pre>
+    </div>
   );
 }

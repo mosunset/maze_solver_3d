@@ -1,399 +1,337 @@
 5:I[5613,[],""]
 6:I[1778,[],""]
-7:I[4782,["250","static/chunks/250-aa9a8b92daefbd0e.js","185","static/chunks/app/layout-89e9369f2085fb33.js"],""]
+7:I[4782,["250","static/chunks/250-aa9a8b92daefbd0e.js","185","static/chunks/app/layout-f0ff300b5bffcc84.js"],""]
 8:I[3623,["250","static/chunks/250-aa9a8b92daefbd0e.js","489","static/chunks/app/template-b9e11730037a0a05.js"],""]
-9:I[5250,["250","static/chunks/250-aa9a8b92daefbd0e.js","185","static/chunks/app/layout-89e9369f2085fb33.js"],""]
-2:T104e,<span class="hljs-comment">/** &lt;a href=&quot;https://www.ugs.kochi-tech.ac.jp/260277p/maze_solver_3d/&quot;&gt; */</span>
-
+9:I[5250,["250","static/chunks/250-aa9a8b92daefbd0e.js","185","static/chunks/app/layout-f0ff300b5bffcc84.js"],""]
+2:T138e,<span class="hljs-comment">/** &lt;a href=&quot;https://www.ugs.kochi-tech.ac.jp/260277p/maze_solver_3d/&quot;&gt; */</span>
 Maze_Generation stage;
 Ui ui;
-
 <span class="hljs-keyword">void</span> <span class="hljs-title function_">settings</span>() {
-    <span class="hljs-comment">// settings()関数は、Processingスケッチが初期化されるときに呼び出されます。</span>
-    <span class="hljs-comment">// 通常、ウィンドウのサイズやピクセルのフォーマット、レンダリングエンジンなど、グローバルな設定を行うために使用されます。</span>
-    <span class="hljs-comment">// この関数は省略可能で、定義されていない場合、Processingはデフォルトの設定を使用します。</span>
-    <span class="hljs-built_in">size</span>(<span class="hljs-number">1024</span>, <span class="hljs-number">576</span>);
-    <span class="hljs-built_in">randomSeed</span>(<span class="hljs-number">1</span>);
-
-    <span class="hljs-comment">// 5以上の奇数</span>
-    stage = <span class="hljs-keyword">new </span><span class="hljs-class title_">Maze_Generation</span>(<span class="hljs-number">37</span>);
-    ui = <span class="hljs-keyword">new </span><span class="hljs-class title_">Ui</span>();
+<span class="bg-red-200">    </span><span class="hljs-comment">// settings()関数は、Processingスケッチが初期化されるときに呼び出されます。</span>
+<span class="bg-red-200">    </span><span class="hljs-comment">// 通常、ウィンドウのサイズやピクセルのフォーマット、レンダリングエンジンなど、グローバルな設定を行うために使用されます。</span>
+<span class="bg-red-200">    </span><span class="hljs-comment">// この関数は省略可能で、定義されていない場合、Processingはデフォルトの設定を使用します。</span>
+<span class="bg-red-200">    </span><span class="hljs-built_in">size</span>(<span class="hljs-number">1024</span>, <span class="hljs-number">576</span>);
+<span class="bg-red-200">    </span><span class="hljs-built_in">randomSeed</span>(<span class="hljs-number">1</span>);
+<span class="bg-red-200">    </span><span class="hljs-comment">// 5以上の奇数</span>
+<span class="bg-red-200">    </span>stage = <span class="hljs-keyword">new </span><span class="hljs-class title_">Maze_Generation</span>(<span class="hljs-number">37</span>);
+<span class="bg-red-200">    </span>ui = <span class="hljs-keyword">new </span><span class="hljs-class title_">Ui</span>();
 }
-
 <span class="hljs-keyword">void</span> <span class="hljs-title function_">setup</span>() {
-    <span class="hljs-comment">// setup()関数は、settings()の後に1回だけ呼び出され、スケッチの初期化を行います。</span>
-    <span class="hljs-comment">// 通常、一度だけ実行する必要のある初期化コードや、スケッチが開始されたときに行いたい初期化作業が含まれます。</span>
-    <span class="hljs-comment">// translate(width / 2,height / 2);</span>
-    <span class="hljs-built_in">background</span>(<span class="hljs-number">50</span>,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>);
+<span class="bg-red-200">    </span><span class="hljs-comment">// setup()関数は、settings()の後に1回だけ呼び出され、スケッチの初期化を行います。</span>
+<span class="bg-red-200">    </span><span class="hljs-comment">// 通常、一度だけ実行する必要のある初期化コードや、スケッチが開始されたときに行いたい初期化作業が含まれます。</span>
+<span class="bg-red-200">    </span><span class="hljs-comment">// translate(width / 2,height / 2);</span>
+<span class="bg-red-200">    </span><span class="hljs-built_in">background</span>(<span class="hljs-number">50</span>,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>);
 }
-
 <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;
 <span class="hljs-keyword">void</span> <span class="hljs-title function_">draw</span>() {
-    <span class="hljs-comment">// draw()関数は、setup()の後に繰り返し呼び出されます。</span>
-    <span class="hljs-comment">//通常、1秒間に約60回呼び出され、連続的なアニメーションや動的な描画を行うために使用されます。</span>
-    <span class="hljs-comment">// draw()には、フレームごとに更新される描画コードが含まれます。</span>
-    <span class="hljs-built_in">background</span>(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>);
-    <span class="hljs-built_in">strokeWeight</span>(<span class="hljs-number">0</span>);
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">mousePressed</span>) {
-            stage = <span class="hljs-keyword">new </span><span class="hljs-class title_">Maze_Generation</span>(<span class="hljs-number">37</span>);
-        }
-    }
-    i++;
-    <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">30</span>) {
-        i = <span class="hljs-number">0</span>;
-    }
-    <span class="hljs-comment">//ui.mini_maze(stage.get_stage());</span>
-    ui.<span class="hljs-property">mini_maze</span>(stage.<span class="hljs-property">get_stage_anser</span>(),stage.<span class="hljs-property">get_distance</span>());
-    ui.<span class="hljs-property">fps</span>();
-    ui.<span class="hljs-property">level</span>(stage.<span class="hljs-property">get_x</span>(),stage.<span class="hljs-property">get_y</span>(),stage.<span class="hljs-property">get_load</span>(),stage.<span class="hljs-property">get_distance</span>());
-
+<span class="bg-red-200">    </span><span class="hljs-comment">// draw()関数は、setup()の後に繰り返し呼び出されます。</span>
+<span class="bg-red-200">    </span><span class="hljs-comment">//通常、1秒間に約60回呼び出され、連続的なアニメーションや動的な描画を行うために使用されます。</span>
+<span class="bg-red-200">    </span><span class="hljs-comment">// draw()には、フレームごとに更新される描画コードが含まれます。</span>
+<span class="bg-red-200">    </span><span class="hljs-built_in">background</span>(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>);
+<span class="bg-red-200">    </span><span class="hljs-built_in">strokeWeight</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">if</span> (<span class="hljs-built_in">mousePressed</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>stage = <span class="hljs-keyword">new </span><span class="hljs-class title_">Maze_Generation</span>(<span class="hljs-number">37</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span>i++;
+<span class="bg-red-200">    </span><span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">30</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>i = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-comment">//ui.mini_maze(stage.get_stage());</span>
+<span class="bg-red-200">    </span>ui.<span class="hljs-property">mini_maze</span>(stage.<span class="hljs-property">get_stage_anser</span>(),stage.<span class="hljs-property">get_distance</span>());
+<span class="bg-red-200">    </span>ui.<span class="hljs-property">fps</span>();
+<span class="bg-red-200">    </span>ui.<span class="hljs-property">level</span>(stage.<span class="hljs-property">get_x</span>(),stage.<span class="hljs-property">get_y</span>(),stage.<span class="hljs-property">get_load</span>(),stage.<span class="hljs-property">get_distance</span>());
 }
-
-
-<span class="hljs-comment">// https://algoful.com/Archive/Algorithm/MazeDig</span>
-<span class="hljs-comment">// https://qiita.com/naru_1017/items/e4d017433372a313aeb3</span>
-<span class="hljs-comment">// https://stone-program.com/python/algorithm/a-star-introduction/</span>
-3:T76e9,<span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">Arrays</span>;
+3:Tbe0f,<span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">Arrays</span>;
 <span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">Collections</span>;
 <span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">Random</span>;
 <span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">Comparator</span>;
 <span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">HashSet</span>;
 <span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">PriorityQueue</span>;
 <span class="hljs-keyword">import</span> java.<span class="hljs-property">util</span>.<span class="hljs-property">Objects</span>;
-
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Maze_Generation</span>{
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[][] stage;<span class="hljs-comment">//0:かべ 1:通路 2:スタート 3:ゴール</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[][] stage_anser;<span class="hljs-comment">//0:かべ 1:通路 2:スタート 3:ゴール 4:探索箇所 5:最短経路</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> x;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> y;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] start;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] goal;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> distance = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> load = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[][] dx = {{<span class="hljs-number">1</span>,<span class="hljs-number">2</span>} ,{ - <span class="hljs-number">1</span>, <span class="hljs-number">-2</span>} ,{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} ,{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} };<span class="hljs-comment">//x軸のベクトル</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[][] dy = {{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} ,{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} ,{<span class="hljs-number">1</span>,<span class="hljs-number">2</span>} ,{ - <span class="hljs-number">1</span>, <span class="hljs-number">-2</span>} };<span class="hljs-comment">//y軸のベクトル</span>
-    
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Maze_Generation</span>(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y) {
-        <span class="hljs-title function_">initialize_stage</span>(x,  y);
-    }
-    
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Maze_Generation</span>(<span class="hljs-type">int</span> xy) {
-        <span class="hljs-title function_">initialize_stage</span>(xy,  xy);
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] <span class="hljs-title function_">get_stage</span>() {
-        <span class="hljs-keyword">return</span> <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>;
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] <span class="hljs-title function_">get_stage_anser</span>() {
-        <span class="hljs-keyword">return</span> <span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span>;
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_distance</span>() {
-        <span class="hljs-keyword">return</span> distance;
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_x</span>() {
-        <span class="hljs-keyword">return</span> x;
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_y</span>() {
-        <span class="hljs-keyword">return</span> y;
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_load</span>() {
-        <span class="hljs-keyword">return</span> load;
-    }
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">initialize_stage</span>(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y) {
-        <span class="hljs-comment">// 5未満のサイズや偶数では生成できない</span>
-        <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">5</span>) x = <span class="hljs-number">5</span>;
-        <span class="hljs-keyword">if</span> (y &lt; <span class="hljs-number">5</span>) y = <span class="hljs-number">5</span>;
-        <span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) x++;
-        <span class="hljs-keyword">if</span> (y % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) y++;
-        <span class="hljs-variable">this</span>.<span class="hljs-property">x</span> = x;
-        <span class="hljs-variable">this</span>.<span class="hljs-property">y</span> = y;
-        <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">y</span>][<span class="hljs-variable">this</span>.<span class="hljs-property">x</span>];
-        <span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">y</span>][<span class="hljs-variable">this</span>.<span class="hljs-property">x</span>];
-        <span class="hljs-comment">// 値の初期化</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>; i++) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>; j++) {
-                <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[i][j] = <span class="hljs-number">0</span>;
-            }
-        }
-        
-        <span class="hljs-comment">// 迷路生成</span>
-        <span class="hljs-variable">this</span>.<span class="hljs-property">start</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[]{<span class="hljs-number">1</span>,<span class="hljs-number">1</span>};
-        <span class="hljs-variable">this</span>.<span class="hljs-property">goal</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[]{<span class="hljs-variable">this</span>.<span class="hljs-property">y</span> - <span class="hljs-number">2</span>,<span class="hljs-variable">this</span>.<span class="hljs-property">x</span> - <span class="hljs-number">2</span>};
-        <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">1</span>;
-        <span class="hljs-title function_">generate_stage</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>], <span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]);
-        
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>; i++) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>; j++) {
-                <span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span>[i][j] = <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[i][j];
-                <span class="hljs-keyword">if</span> (<span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[i][j] == <span class="hljs-number">1</span>) {
-                    load++;
-                }
-                <span class="hljs-comment">// デバッグ用</span>
-                <span class="hljs-comment">//print(this.stage[i][j]);</span>
-            }
-            <span class="hljs-comment">//println(&quot;&quot;);</span>
-        }
-        
-        <span class="hljs-comment">// 迷路攻略</span>
-        <span class="hljs-title function_">a_star</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>,<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>);
-        <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">2</span>;
-        <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">3</span>;
-    }
-    
-    <span class="hljs-comment">// 迷路生成 穴掘り法</span>
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">generate_stage</span>(<span class="hljs-type">int</span> ny,<span class="hljs-type">int</span> nx) {
-        <span class="hljs-built_in">ArrayList</span>&lt;Integer&gt; array = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;Integer&gt;(Arrays.<span class="hljs-property">asList</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>));
-        Collections.<span class="hljs-property">shuffle</span>(array); <span class="hljs-comment">// ランダムに行く方向を決める</span>
-        
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : array) {
-            
-            <span class="hljs-keyword">if</span> (ny + dy[i][<span class="hljs-number">1</span>] &lt; <span class="hljs-number">1</span> || ny + dy[i][<span class="hljs-number">1</span>] &gt;=  <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>) { <span class="hljs-comment">//周りの壁</span>
-                <span class="hljs-keyword">continue</span>;
-            }
-            
-            <span class="hljs-keyword">if</span> (nx + dx[i][<span class="hljs-number">1</span>] &lt; <span class="hljs-number">1</span> || nx + dx[i][<span class="hljs-number">1</span>] &gt;=  <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>) { <span class="hljs-comment">//周りの壁</span>
-                <span class="hljs-keyword">continue</span>;
-            }
-            
-            <span class="hljs-keyword">if</span> (stage[ny + dy[i][<span class="hljs-number">1</span>]][nx + dx[i][<span class="hljs-number">1</span>]] == <span class="hljs-number">1</span>) { <span class="hljs-comment">//2ます先</span>
-                <span class="hljs-keyword">continue</span>;
-            }
-            
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">2</span>; j++) { <span class="hljs-comment">//通路を掘る</span>
-                stage[ny + dy[i][j]][nx + dx[i][j]] = <span class="hljs-number">1</span>;
-            }
-            
-            <span class="hljs-title function_">generate_stage</span>(ny + dy[i][<span class="hljs-number">1</span>], nx + dx[i][<span class="hljs-number">1</span>]); <span class="hljs-comment">//掘った先のところに移動</span>
-        }
-    }
-    
-    <span class="hljs-comment">// A*アルゴリズム</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">a_star</span>(<span class="hljs-type">int</span>[] start,<span class="hljs-type">int</span>[] end) {
-        Node startNode = <span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(<span class="hljs-literal">null</span>, start[<span class="hljs-number">0</span>], start[<span class="hljs-number">1</span>]);
-        startNode.<span class="hljs-property">setG</span>(<span class="hljs-number">0</span>);
-        startNode.<span class="hljs-property">setH</span>(<span class="hljs-number">0</span>);
-        startNode.<span class="hljs-property">setF</span>(<span class="hljs-number">0</span>);
-        
-        Node endNode = <span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(<span class="hljs-literal">null</span>, end[<span class="hljs-number">0</span>], end[<span class="hljs-number">1</span>]);
-        endNode.<span class="hljs-property">setG</span>(<span class="hljs-number">0</span>);
-        endNode.<span class="hljs-property">setH</span>(<span class="hljs-number">0</span>);
-        endNode.<span class="hljs-property">setF</span>(<span class="hljs-number">0</span>);
-        
-        <span class="hljs-comment">// 優先度付きキュー</span>
-        <span class="hljs-comment">// 経路候補の保持</span>
-        PriorityQueue&lt;Node&gt; openList = <span class="hljs-keyword">new </span><span class="hljs-class title_">PriorityQueue</span>&lt;Node&gt;(<span class="hljs-keyword">new </span><span class="hljs-class title_">Comparator</span>&lt;Node&gt;() {
-            @Override
-            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span>(Node n1, Node n2) {
-                <span class="hljs-keyword">return</span> Integer.<span class="hljs-property">compare</span>(n2.<span class="hljs-property">f</span>,n1.<span class="hljs-property">f</span>);
-            }
-        });
-        <span class="hljs-comment">// openList.add(5);        // 要素の追加</span>
-        <span class="hljs-comment">// int highestPriority = openList.poll();// 要素の取得（最も優先度が高い要素を削除して取得）</span>
-        <span class="hljs-comment">// int highestPriority = openList.peek();// 要素の取得（最も優先度が高い要素を削除せず取得）NoRemove</span>
-        <span class="hljs-comment">// boolean containsElement = openList.contains(8);// 要素の存在確認</span>
-        <span class="hljs-comment">// int queueSize = openList.size();// openListの要素の数</span>
-        
-        <span class="hljs-comment">// 重複を許さない</span>
-        <span class="hljs-comment">// 計算済みノード</span>
-        HashSet&lt;Node&gt; closedList = <span class="hljs-keyword">new </span><span class="hljs-class title_">HashSet</span>&lt;Node&gt;();
-        <span class="hljs-comment">// closedList.add(&quot;Apple&quot;); //要素の追加</span>
-        <span class="hljs-comment">// closedList.remove(&quot;Banana&quot;); //要素の削除</span>
-        <span class="hljs-comment">// boolean containsOrange = closedList.contains(&quot;Orange&quot;); //要素の存在確認</span>
-        <span class="hljs-comment">// int setSize = closedList.size(); //要素の数</span>
-        
-        openList.<span class="hljs-property">add</span>(startNode);
-        <span class="hljs-comment">//Node out = null;</span>
-        <span class="hljs-keyword">while</span>(!openList.<span class="hljs-property">isEmpty</span>()) {
-            
-            Node currentNode = openList.<span class="hljs-property">poll</span>();
-            closedList.<span class="hljs-property">add</span>(currentNode);
-            <span class="hljs-comment">//out = new Node(currentNode.getParent(),currentNode.getX(),currentNode.getY());</span>
-            <span class="hljs-keyword">if</span> (currentNode.<span class="hljs-property">equals</span>(endNode)) {
-                <span class="hljs-title function_">reconstructPath</span>(currentNode);
-                <span class="hljs-keyword">return</span>;
-            }
-            
-            <span class="hljs-built_in">ArrayList</span>&lt;Node&gt; children = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;Node&gt;();
-            <span class="hljs-type">int</span>[][] directions = {{<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>} , {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>} , { - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>} , {<span class="hljs-number">1</span>, <span class="hljs-number">0</span>} };
-            
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] direction : directions) {
-                <span class="hljs-comment">// ノードの位置を計算</span>
-                <span class="hljs-type">int</span>[] nodePosition = {currentNode.<span class="hljs-property">getX</span>() + direction[<span class="hljs-number">0</span>], currentNode.<span class="hljs-property">getY</span>() + direction[<span class="hljs-number">1</span>]};
-                
-                <span class="hljs-comment">// 移動不可能位置またはクローズリストにある場合は無視</span>
-                <span class="hljs-keyword">if</span> (stage[nodePosition[<span class="hljs-number">1</span>]][nodePosition[<span class="hljs-number">0</span>]] != <span class="hljs-number">1</span> || closedList.<span class="hljs-property">contains</span>(<span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(<span class="hljs-literal">null</span>, nodePosition[<span class="hljs-number">0</span>], nodePosition[<span class="hljs-number">1</span>]))) {
-                    <span class="hljs-keyword">continue</span>;
-                }
-                
-                Node newNode = <span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(currentNode, nodePosition[<span class="hljs-number">0</span>], nodePosition[<span class="hljs-number">1</span>]);
-                children.<span class="hljs-property">add</span>(newNode);
-            }
-            
-            <span class="hljs-keyword">for</span> (Node child : children) {
-                
-                child.<span class="hljs-property">setG</span>((<span class="hljs-type">int</span>)(Math.<span class="hljs-property">pow</span>(child.<span class="hljs-property">getX</span>() - <span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>) + Math.<span class="hljs-property">pow</span>(child.<span class="hljs-property">getY</span>() - <span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>], <span class="hljs-number">2</span>)));
-                child.<span class="hljs-property">setH</span>((<span class="hljs-type">int</span>)(Math.<span class="hljs-property">pow</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">1</span>] - child.<span class="hljs-property">getX</span>(), <span class="hljs-number">2</span>) + Math.<span class="hljs-property">pow</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">0</span>] - child.<span class="hljs-property">getY</span>(), <span class="hljs-number">2</span>)));
-                child.<span class="hljs-property">setF</span>(child.<span class="hljs-property">getG</span>() + child.<span class="hljs-property">getH</span>());
-                
-                <span class="hljs-keyword">for</span> (Node openNode : openList) {
-                    <span class="hljs-keyword">if</span> (openNode.<span class="hljs-property">equals</span>(child) &amp;&amp; child.<span class="hljs-property">getG</span>() &gt; openNode.<span class="hljs-property">getG</span>()) {
-                        <span class="hljs-keyword">continue</span>;
-                    }
-                }
-                openList.<span class="hljs-property">add</span>(child);
-                <span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span>[child.<span class="hljs-property">getY</span>()][child.<span class="hljs-property">getX</span>()] = <span class="hljs-number">4</span>;
-            }
-        }
-        <span class="hljs-comment">//reconstructPath(out);</span>
-        <span class="hljs-keyword">return</span>;
-    }
-    
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reconstructPath</span>(Node current) {
-        <span class="hljs-keyword">while</span>(current != <span class="hljs-literal">null</span>) {
-            stage_anser[current.<span class="hljs-property">getY</span>()][current.<span class="hljs-property">getX</span>()] = <span class="hljs-number">5</span>; <span class="hljs-comment">// 最短経路に含まれるノードをマーク</span>
-            current = current.<span class="hljs-property">getParent</span>();
-            <span class="hljs-variable">this</span>.<span class="hljs-property">distance</span>++;
-        }
-        
-        <span class="hljs-comment">// 最短経路を含んだ迷路を表示</span>
-        stage_anser[<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">2</span>;
-        stage_anser[<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">3</span>;
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>; i++) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>; j++) {
-                <span class="hljs-comment">//print(stage_anser[i][j]);</span>
-            }
-            <span class="hljs-comment">//println(&quot;&quot;);</span>
-        }
-        
-    }
-    
-    
-    <span class="hljs-comment">// ノードクラス（迷路上のセルを表す）</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span> {
-        <span class="hljs-keyword">private</span> Node parent;
-        <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> x, y; <span class="hljs-comment">// representing the position as (x, y)</span>
-        
-        <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> g; <span class="hljs-comment">// スタートからの移動コスト値</span>
-        <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> h; <span class="hljs-comment">// 仮に見積もったコスト値</span>
-        <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> f; <span class="hljs-comment">// 合計コスト</span>
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-title function_">Node</span>(Node parent, <span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">parent</span> = parent;
-            <span class="hljs-variable">this</span>.<span class="hljs-property">x</span> = x;
-            <span class="hljs-variable">this</span>.<span class="hljs-property">y</span> = y;
-            <span class="hljs-variable">this</span>.<span class="hljs-property">g</span> = <span class="hljs-number">0</span>;
-            <span class="hljs-variable">this</span>.<span class="hljs-property">h</span> = <span class="hljs-number">0</span>;
-            <span class="hljs-variable">this</span>.<span class="hljs-property">f</span> = <span class="hljs-number">0</span>;
-        }
-        
-        <span class="hljs-comment">// Getters and setters for the fields</span>
-        <span class="hljs-keyword">public</span> Node <span class="hljs-title function_">getParent</span>() {
-            <span class="hljs-keyword">return</span> parent;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setParent</span>(Node parent) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">parent</span> = parent;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getX</span>() {
-            <span class="hljs-keyword">return</span> x;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setX</span>(<span class="hljs-type">int</span> x) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">x</span> = x;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getY</span>() {
-            <span class="hljs-keyword">return</span> y;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setY</span>(<span class="hljs-type">int</span> y) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">y</span> = y;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getG</span>() {
-            <span class="hljs-keyword">return</span> g;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setG</span>(<span class="hljs-type">int</span> g) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">g</span> = g;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getH</span>() {
-            <span class="hljs-keyword">return</span> h;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setH</span>(<span class="hljs-type">int</span> h) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">h</span> = h;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getF</span>() {
-            <span class="hljs-keyword">return</span> f;
-        }
-        
-        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setF</span>(<span class="hljs-type">int</span> f) {
-            <span class="hljs-variable">this</span>.<span class="hljs-property">f</span> = f;
-        }
-        
-        @Override
-        <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span>(<span class="hljs-built_in">Object</span> obj) {
-            <span class="hljs-keyword">if</span> (<span class="hljs-variable">this</span> == obj) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-            <span class="hljs-keyword">if</span> (obj == <span class="hljs-literal">null</span> || <span class="hljs-title function_">getClass</span>() != obj.<span class="hljs-property">getClass</span>()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-            Node node = (Node) obj;
-            <span class="hljs-keyword">return</span> x == node.<span class="hljs-property">x</span> &amp;&amp; y == node.<span class="hljs-property">y</span>;
-        }
-        
-        @Override
-        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span>() {
-            <span class="hljs-keyword">return</span> Objects.<span class="hljs-property">hash</span>(x, y);
-        }
-    }
-    
-}4:T150d,<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Ui</span>{
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> margin = <span class="hljs-number">8</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-built_in">width</span> = <span class="hljs-number">12</span>;
-    <span class="hljs-keyword">private</span> <span class="hljs-type">float</span> avelevel;
-    
-    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Ui</span>() {}
-    
-    
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fps</span>() {
-        <span class="hljs-built_in">String</span> fps = <span class="hljs-string">&quot;FPS:&quot;</span> + <span class="hljs-built_in">nf</span>(<span class="hljs-built_in">frameRate</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
-        <span class="hljs-built_in">text</span>(fps , margin, margin * <span class="hljs-number">2</span>);
-    }
-    
-    <span class="hljs-comment">// 平均Level40</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">level</span>(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y,<span class="hljs-type">int</span> load,<span class="hljs-type">int</span> distance) {
-        <span class="hljs-type">float</span> v = (<span class="hljs-type">float</span>) distance / (load) * <span class="hljs-number">100</span>;
-        <span class="hljs-built_in">String</span> level = <span class="hljs-string">&quot;level(%):&quot;</span> + <span class="hljs-built_in">nf</span>(v, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
-        <span class="hljs-built_in">text</span>(level , margin,(<span class="hljs-built_in">height</span> - y * <span class="hljs-built_in">width</span>) - margin * <span class="hljs-number">2</span>);
-    }
-    
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">mini_maze</span>(<span class="hljs-type">int</span>[][] stage,<span class="hljs-type">int</span> distance) {
-        <span class="hljs-type">int</span> x = stage.<span class="hljs-property">length</span>;
-        <span class="hljs-type">int</span> y = stage[<span class="hljs-number">0</span>].<span class="hljs-property">length</span>;
-        <span class="hljs-built_in">strokeWeight</span>(<span class="hljs-number">1</span>);
-        <span class="hljs-built_in">stroke</span>(<span class="hljs-number">150</span>,<span class="hljs-number">150</span>,<span class="hljs-number">150</span>);
-        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; y; i++) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; x; j++) {
-                <span class="hljs-comment">//0:かべ 1:通路 2:スタート 3:ゴール 4:探索箇所 5:最短経路</span>
-                <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">0</span>) {
-                    <span class="hljs-built_in">fill</span>(<span class="hljs-number">0</span>);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">1</span>) {
-                    <span class="hljs-built_in">fill</span>(<span class="hljs-number">255</span>);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">2</span>) {
-                    <span class="hljs-built_in">fill</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] ==  <span class="hljs-number">3</span>) {
-                    <span class="hljs-built_in">fill</span>(<span class="hljs-number">255</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">4</span>) {
-                    <span class="hljs-built_in">fill</span>(<span class="hljs-number">100</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>);
-                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">5</span>) {
-                    <span class="hljs-built_in">fill</span>(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>);
-                }
-                <span class="hljs-built_in">rect</span>(j * <span class="hljs-built_in">width</span> + margin,(<span class="hljs-built_in">height</span> - (y - i) * <span class="hljs-built_in">width</span>) - margin, <span class="hljs-built_in">width</span>, <span class="hljs-built_in">width</span>);
-            }
-        }
-    }
-}0:["1ChrlMOkzp1oNVTJGCt_c",[[["",{"children":["code",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["code",{"children":["__PAGE__",{},["$L1",["$","div",null,{"children":[["$","div","file 1, maze.pde",{"children":[["$","div",null,{"className":"mb-4 text-2xl","children":"file 1, maze.pde"}],["$","div",null,{"className":"mb-8 p-4 border rounded-lg overflow-x-scroll border-gray-700","children":["$","pre",null,{"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]}]}]]}],["$","div","file 2, maze_generation.pde",{"children":[["$","div",null,{"className":"mb-4 text-2xl","children":"file 2, maze_generation.pde"}],["$","div",null,{"className":"mb-8 p-4 border rounded-lg overflow-x-scroll border-gray-700","children":["$","pre",null,{"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]}]]}],["$","div","file 3, ui.pde",{"children":[["$","div",null,{"className":"mb-4 text-2xl","children":"file 3, ui.pde"}],["$","div",null,{"className":"mb-8 p-4 border rounded-lg overflow-x-scroll border-gray-700","children":["$","pre",null,{"children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]}]]}]]}],null]]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","code","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/260277p/maze_solver_3d/_next/static/css/5c3da54741072322.css","precedence":"next","crossOrigin":""}]]}],null]]},[null,["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","$L7",null,{}]}],["$","body",null,{"className":"__className_579ea0 relative flex min-h-screen flex-col","children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{"children":["$","$L6",null,{}]}],"templateStyles":[],"templateScripts":[],"notFound":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"block text-7xl font-bold text-gray-800 sm:text-9xl ","children":"404"}],["$","h1",null,{"className":"block text-2xl font-bold text-white"}],["$","p",null,{"className":"mt-3 text-gray-600 ","children":"おっと、何かがうまくいきませんでした。"}],["$","p",null,{"className":"text-gray-600 ","children":"申し訳ありませんが、ページが見つかりませんでした。"}],["$","div",null,{"className":"mt-5 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3","children":["$","$L9",null,{"className":"inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent px-4 py-3 text-sm font-semibold text-blue-600 hover:text-blue-800 disabled:pointer-events-none disabled:opacity-50 sm:w-auto ","href":"/","children":[["$","svg",null,{"className":"h-4 w-4 flex-shrink-0","xmlns":"http://www.w3.org/2000/svg","width":"24","height":"24","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round","children":["$","path",null,{"d":"m15 18-6-6 6-6"}]}],"ホームに戻る"]}]}]]}],"notFoundStyles":[],"styles":null}],["$","footer",null,{"className":"mx-auto mt-auto w-full max-w-[85rem] border-t-2 border-gray-400 px-4 py-10 sm:px-6 lg:px-8","children":["$","div",null,{"className":"text-center","children":[["$","$L9",null,{"href":"/","className":"mx-auto block max-w-fit p-3 text-xl font-semibold text-black","children":"Maze Solver 3D - 1260277"}],["$","div",null,{"className":"m-3 text-gray-500","children":["2024 高知工科大学 情報学群 浅野友哉 1260277.",["$","span",null,{"className":"pl-2","children":"|"}],["$","a",null,{"href":"https://github.com/mosunset/maze_solver_3d","target":"_blank","rel":"noopener noreferrer","className":"p-4 pl-2 font-semibold text-blue-600 transition hover:text-orange-400 hover:underline hover:underline-offset-1","children":"GitHub"}]]}]]}]}]]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/260277p/maze_solver_3d/_next/static/css/ddc4a85bfcadeb0f.css","precedence":"next","crossOrigin":""}]],"$La"]]]]
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[][] stage;<span class="hljs-comment">//0:かべ 1:通路 2:スタート 3:ゴール</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[][] stage_anser;<span class="hljs-comment">//0:かべ 1:通路 2:スタート 3:ゴール 4:探索箇所 5:最短経路</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> x;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> y;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] start;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span>[] goal;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> distance = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> load = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[][] dx = {{<span class="hljs-number">1</span>,<span class="hljs-number">2</span>} ,{ - <span class="hljs-number">1</span>, <span class="hljs-number">-2</span>} ,{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} ,{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} };<span class="hljs-comment">//x軸のベクトル</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span>[][] dy = {{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} ,{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>} ,{<span class="hljs-number">1</span>,<span class="hljs-number">2</span>} ,{ - <span class="hljs-number">1</span>, <span class="hljs-number">-2</span>} };<span class="hljs-comment">//y軸のベクトル</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-title function_">Maze_Generation</span>(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-title function_">initialize_stage</span>(x,  y);
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-title function_">Maze_Generation</span>(<span class="hljs-type">int</span> xy) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-title function_">initialize_stage</span>(xy,  xy);
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] <span class="hljs-title function_">get_stage</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span> <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[][] <span class="hljs-title function_">get_stage_anser</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span> <span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span>;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_distance</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span> distance;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_x</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span> x;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_y</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span> y;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">get_load</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span> load;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">initialize_stage</span>(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 5未満のサイズや偶数では生成できない</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">5</span>) x = <span class="hljs-number">5</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">if</span> (y &lt; <span class="hljs-number">5</span>) y = <span class="hljs-number">5</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) x++;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">if</span> (y % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) y++;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">x</span> = x;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">y</span> = y;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">y</span>][<span class="hljs-variable">this</span>.<span class="hljs-property">x</span>];
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">y</span>][<span class="hljs-variable">this</span>.<span class="hljs-property">x</span>];
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 値の初期化</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>; i++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>; j++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[i][j] = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 迷路生成</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">start</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[]{<span class="hljs-number">1</span>,<span class="hljs-number">1</span>};
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">goal</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">int</span>[]{<span class="hljs-variable">this</span>.<span class="hljs-property">y</span> - <span class="hljs-number">2</span>,<span class="hljs-variable">this</span>.<span class="hljs-property">x</span> - <span class="hljs-number">2</span>};
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">1</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-title function_">generate_stage</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>], <span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>; i++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>; j++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span>[i][j] = <span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[i][j];
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">if</span> (<span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[i][j] == <span class="hljs-number">1</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span>load++;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-comment">// デバッグ用</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-comment">//print(this.stage[i][j]);</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-comment">//println(&quot;&quot;);</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 迷路攻略</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-title function_">a_star</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>,<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">2</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage</span>[<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">3</span>;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-comment">// 迷路生成 穴掘り法</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">generate_stage</span>(<span class="hljs-type">int</span> ny,<span class="hljs-type">int</span> nx) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">ArrayList</span>&lt;Integer&gt; array = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;Integer&gt;(Arrays.<span class="hljs-property">asList</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>));
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>Collections.<span class="hljs-property">shuffle</span>(array); <span class="hljs-comment">// ランダムに行く方向を決める</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i : array) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">if</span> (ny + dy[i][<span class="hljs-number">1</span>] &lt; <span class="hljs-number">1</span> || ny + dy[i][<span class="hljs-number">1</span>] &gt;=  <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>) { <span class="hljs-comment">//周りの壁</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">continue</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">if</span> (nx + dx[i][<span class="hljs-number">1</span>] &lt; <span class="hljs-number">1</span> || nx + dx[i][<span class="hljs-number">1</span>] &gt;=  <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>) { <span class="hljs-comment">//周りの壁</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">continue</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">if</span> (stage[ny + dy[i][<span class="hljs-number">1</span>]][nx + dx[i][<span class="hljs-number">1</span>]] == <span class="hljs-number">1</span>) { <span class="hljs-comment">//2ます先</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">continue</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">2</span>; j++) { <span class="hljs-comment">//通路を掘る</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>stage[ny + dy[i][j]][nx + dx[i][j]] = <span class="hljs-number">1</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-title function_">generate_stage</span>(ny + dy[i][<span class="hljs-number">1</span>], nx + dx[i][<span class="hljs-number">1</span>]); <span class="hljs-comment">//掘った先のところに移動</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-comment">// A*アルゴリズム</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">a_star</span>(<span class="hljs-type">int</span>[] start,<span class="hljs-type">int</span>[] end) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>Node startNode = <span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(<span class="hljs-literal">null</span>, start[<span class="hljs-number">0</span>], start[<span class="hljs-number">1</span>]);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>startNode.<span class="hljs-property">setG</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>startNode.<span class="hljs-property">setH</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>startNode.<span class="hljs-property">setF</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>Node endNode = <span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(<span class="hljs-literal">null</span>, end[<span class="hljs-number">0</span>], end[<span class="hljs-number">1</span>]);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>endNode.<span class="hljs-property">setG</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>endNode.<span class="hljs-property">setH</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>endNode.<span class="hljs-property">setF</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 優先度付きキュー</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 経路候補の保持</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>PriorityQueue&lt;Node&gt; openList = <span class="hljs-keyword">new </span><span class="hljs-class title_">PriorityQueue</span>&lt;Node&gt;(<span class="hljs-keyword">new </span><span class="hljs-class title_">Comparator</span>&lt;Node&gt;() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>@Override
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span>(Node n1, Node n2) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">return</span> Integer.<span class="hljs-property">compare</span>(n2.<span class="hljs-property">f</span>,n1.<span class="hljs-property">f</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>});
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// openList.add(5);        // 要素の追加</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// int highestPriority = openList.poll();// 要素の取得（最も優先度が高い要素を削除して取得）</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// int highestPriority = openList.peek();// 要素の取得（最も優先度が高い要素を削除せず取得）NoRemove</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// boolean containsElement = openList.contains(8);// 要素の存在確認</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// int queueSize = openList.size();// openListの要素の数</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 重複を許さない</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 計算済みノード</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>HashSet&lt;Node&gt; closedList = <span class="hljs-keyword">new </span><span class="hljs-class title_">HashSet</span>&lt;Node&gt;();
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// closedList.add(&quot;Apple&quot;); //要素の追加</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// closedList.remove(&quot;Banana&quot;); //要素の削除</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// boolean containsOrange = closedList.contains(&quot;Orange&quot;); //要素の存在確認</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// int setSize = closedList.size(); //要素の数</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>openList.<span class="hljs-property">add</span>(startNode);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">//Node out = null;</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">while</span>(!openList.<span class="hljs-property">isEmpty</span>()) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>Node currentNode = openList.<span class="hljs-property">poll</span>();
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>closedList.<span class="hljs-property">add</span>(currentNode);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-comment">//out = new Node(currentNode.getParent(),currentNode.getX(),currentNode.getY());</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">if</span> (currentNode.<span class="hljs-property">equals</span>(endNode)) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-title function_">reconstructPath</span>(currentNode);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">return</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-built_in">ArrayList</span>&lt;Node&gt; children = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;Node&gt;();
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-type">int</span>[][] directions = {{<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>} , {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>} , { - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>} , {<span class="hljs-number">1</span>, <span class="hljs-number">0</span>} };
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] direction : directions) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-comment">// ノードの位置を計算</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-type">int</span>[] nodePosition = {currentNode.<span class="hljs-property">getX</span>() + direction[<span class="hljs-number">0</span>], currentNode.<span class="hljs-property">getY</span>() + direction[<span class="hljs-number">1</span>]};
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-comment">// 移動不可能位置またはクローズリストにある場合は無視</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">if</span> (stage[nodePosition[<span class="hljs-number">1</span>]][nodePosition[<span class="hljs-number">0</span>]] != <span class="hljs-number">1</span> || closedList.<span class="hljs-property">contains</span>(<span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(<span class="hljs-literal">null</span>, nodePosition[<span class="hljs-number">0</span>], nodePosition[<span class="hljs-number">1</span>]))) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-keyword">continue</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>Node newNode = <span class="hljs-keyword">new </span><span class="hljs-class title_">Node</span>(currentNode, nodePosition[<span class="hljs-number">0</span>], nodePosition[<span class="hljs-number">1</span>]);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>children.<span class="hljs-property">add</span>(newNode);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (Node child : children) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>child.<span class="hljs-property">setG</span>((<span class="hljs-type">int</span>)(Math.<span class="hljs-property">pow</span>(child.<span class="hljs-property">getX</span>() - <span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>], <span class="hljs-number">2</span>) + Math.<span class="hljs-property">pow</span>(child.<span class="hljs-property">getY</span>() - <span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>], <span class="hljs-number">2</span>)));
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>child.<span class="hljs-property">setH</span>((<span class="hljs-type">int</span>)(Math.<span class="hljs-property">pow</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">1</span>] - child.<span class="hljs-property">getX</span>(), <span class="hljs-number">2</span>) + Math.<span class="hljs-property">pow</span>(<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">0</span>] - child.<span class="hljs-property">getY</span>(), <span class="hljs-number">2</span>)));
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>child.<span class="hljs-property">setF</span>(child.<span class="hljs-property">getG</span>() + child.<span class="hljs-property">getH</span>());
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">for</span> (Node openNode : openList) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-keyword">if</span> (openNode.<span class="hljs-property">equals</span>(child) &amp;&amp; child.<span class="hljs-property">getG</span>() &gt; openNode.<span class="hljs-property">getG</span>()) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="bg-indigo-200">    </span><span class="hljs-keyword">continue</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>openList.<span class="hljs-property">add</span>(child);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">stage_anser</span>[child.<span class="hljs-property">getY</span>()][child.<span class="hljs-property">getX</span>()] = <span class="hljs-number">4</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">//reconstructPath(out);</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">return</span>;
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reconstructPath</span>(Node current) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">while</span>(current != <span class="hljs-literal">null</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>stage_anser[current.<span class="hljs-property">getY</span>()][current.<span class="hljs-property">getX</span>()] = <span class="hljs-number">5</span>; <span class="hljs-comment">// 最短経路に含まれるノードをマーク</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>current = current.<span class="hljs-property">getParent</span>();
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">distance</span>++;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// 最短経路を含んだ迷路を表示</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>stage_anser[<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">start</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">2</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>stage_anser[<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">0</span>]][<span class="hljs-variable">this</span>.<span class="hljs-property">goal</span>[<span class="hljs-number">1</span>]] = <span class="hljs-number">3</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">y</span>; i++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-variable">this</span>.<span class="hljs-property">x</span>; j++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-comment">//print(stage_anser[i][j]);</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-comment">//println(&quot;&quot;);</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-comment">// ノードクラス（迷路上のセルを表す）</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span> {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">private</span> Node parent;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> x, y; <span class="hljs-comment">// representing the position as (x, y)</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> g; <span class="hljs-comment">// スタートからの移動コスト値</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> h; <span class="hljs-comment">// 仮に見積もったコスト値</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> f; <span class="hljs-comment">// 合計コスト</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-title function_">Node</span>(Node parent, <span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">parent</span> = parent;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">x</span> = x;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">y</span> = y;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">g</span> = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">h</span> = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">f</span> = <span class="hljs-number">0</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-comment">// Getters and setters for the fields</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> Node <span class="hljs-title function_">getParent</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> parent;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setParent</span>(Node parent) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">parent</span> = parent;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getX</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> x;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setX</span>(<span class="hljs-type">int</span> x) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">x</span> = x;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getY</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> y;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setY</span>(<span class="hljs-type">int</span> y) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">y</span> = y;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getG</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> g;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setG</span>(<span class="hljs-type">int</span> g) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">g</span> = g;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getH</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> h;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setH</span>(<span class="hljs-type">int</span> h) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">h</span> = h;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getF</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> f;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setF</span>(<span class="hljs-type">int</span> f) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-variable">this</span>.<span class="hljs-property">f</span> = f;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>@Override
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span>(<span class="hljs-built_in">Object</span> obj) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">if</span> (<span class="hljs-variable">this</span> == obj) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">if</span> (obj == <span class="hljs-literal">null</span> || <span class="hljs-title function_">getClass</span>() != obj.<span class="hljs-property">getClass</span>()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>Node node = (Node) obj;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> x == node.<span class="hljs-property">x</span> &amp;&amp; y == node.<span class="hljs-property">y</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>@Override
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">return</span> Objects.<span class="hljs-property">hash</span>(x, y);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span>}
+}
+4:T2283,<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Ui</span>{
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> margin = <span class="hljs-number">8</span>;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-built_in">width</span> = <span class="hljs-number">12</span>;
+<span class="bg-red-200">    </span><span class="hljs-keyword">private</span> <span class="hljs-type">float</span> avelevel;
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-title function_">Ui</span>() {}
+
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fps</span>() {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">String</span> fps = <span class="hljs-string">&quot;FPS:&quot;</span> + <span class="hljs-built_in">nf</span>(<span class="hljs-built_in">frameRate</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">text</span>(fps , margin, margin * <span class="hljs-number">2</span>);
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-comment">// 平均Level40</span>
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">level</span>(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y,<span class="hljs-type">int</span> load,<span class="hljs-type">int</span> distance) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-type">float</span> v = (<span class="hljs-type">float</span>) distance / (load) * <span class="hljs-number">100</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">String</span> level = <span class="hljs-string">&quot;level(%):&quot;</span> + <span class="hljs-built_in">nf</span>(v, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">text</span>(level , margin,(<span class="hljs-built_in">height</span> - y * <span class="hljs-built_in">width</span>) - margin * <span class="hljs-number">2</span>);
+<span class="bg-red-200">    </span>}
+<span class="bg-red-200">    </span><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">mini_maze</span>(<span class="hljs-type">int</span>[][] stage,<span class="hljs-type">int</span> distance) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-type">int</span> x = stage.<span class="hljs-property">length</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-type">int</span> y = stage[<span class="hljs-number">0</span>].<span class="hljs-property">length</span>;
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">strokeWeight</span>(<span class="hljs-number">1</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-built_in">stroke</span>(<span class="hljs-number">150</span>,<span class="hljs-number">150</span>,<span class="hljs-number">150</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; y; i++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; x; j++) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-comment">//0:かべ 1:通路 2:スタート 3:ゴール 4:探索箇所 5:最短経路</span>
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">0</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-built_in">fill</span>(<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">1</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-built_in">fill</span>(<span class="hljs-number">255</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">2</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-built_in">fill</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">255</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] ==  <span class="hljs-number">3</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-built_in">fill</span>(<span class="hljs-number">255</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">4</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-built_in">fill</span>(<span class="hljs-number">100</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stage[i][j] == <span class="hljs-number">5</span>) {
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="bg-blue-200">    </span><span class="hljs-built_in">fill</span>(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span><span class="bg-green-200">    </span><span class="hljs-built_in">rect</span>(j * <span class="hljs-built_in">width</span> + margin,(<span class="hljs-built_in">height</span> - (y - i) * <span class="hljs-built_in">width</span>) - margin, <span class="hljs-built_in">width</span>, <span class="hljs-built_in">width</span>);
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span><span class="bg-yellow-200">    </span>}
+<span class="bg-red-200">    </span><span class="bg-pink-200">    </span>}
+<span class="bg-red-200">    </span>}
+}0:["Ji2VVP05GWFs6Ya9zvd9K",[[["",{"children":["code",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["code",{"children":["__PAGE__",{},["$L1",["$","div",null,{"children":[["$","div",null,{"className":"text-2xl mb-4","children":"コード一覧"}],[["$","details","file 1, maze.pde",{"children":[["$","summary",null,{"className":"mb-2 sm:-mb-4 text-xl group hover:underline ","children":["file 1, maze.pde",["$","span",null,{"className":"text-right inline-block w-full sm:-translate-y-7 groupe hover:underline","children":"クリックで開閉"}]]}],["$","div",null,{"children":["$","div",null,{"children":["$","pre",null,{"className":"mb-4 p-2 border rounded-lg overflow-x-auto border-gray-700","children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]}]}]}]]}],["$","details","file 2, maze_generation.pde",{"children":[["$","summary",null,{"className":"mb-2 sm:-mb-4 text-xl group hover:underline ","children":["file 2, maze_generation.pde",["$","span",null,{"className":"text-right inline-block w-full sm:-translate-y-7 groupe hover:underline","children":"クリックで開閉"}]]}],["$","div",null,{"children":["$","div",null,{"children":["$","pre",null,{"className":"mb-4 p-2 border rounded-lg overflow-x-auto border-gray-700","children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}]}]}]]}],["$","details","file 3, ui.pde",{"children":[["$","summary",null,{"className":"mb-2 sm:-mb-4 text-xl group hover:underline ","children":["file 3, ui.pde",["$","span",null,{"className":"text-right inline-block w-full sm:-translate-y-7 groupe hover:underline","children":"クリックで開閉"}]]}],["$","div",null,{"children":["$","div",null,{"children":["$","pre",null,{"className":"mb-4 p-2 border rounded-lg overflow-x-auto border-gray-700","children":["$","code",null,{"dangerouslySetInnerHTML":{"__html":"$4"}}]}]}]}]]}]]]}],null]]},[null,["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","code","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":[["$","link","0",{"rel":"stylesheet","href":"/260277p/maze_solver_3d/_next/static/css/5c3da54741072322.css","precedence":"next","crossOrigin":""}]]}],null]]},[null,["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":["$","$L7",null,{}]}],["$","body",null,{"className":"__className_579ea0 relative flex min-h-screen flex-col","children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{"children":["$","$L6",null,{}]}],"templateStyles":[],"templateScripts":[],"notFound":["$","div",null,{"className":"text-center","children":[["$","h1",null,{"className":"block text-7xl font-bold text-gray-800 sm:text-9xl ","children":"404"}],["$","h1",null,{"className":"block text-2xl font-bold text-white"}],["$","p",null,{"className":"mt-3 text-gray-600 ","children":"おっと、何かがうまくいきませんでした。"}],["$","p",null,{"className":"text-gray-600 ","children":"申し訳ありませんが、ページが見つかりませんでした。"}],["$","div",null,{"className":"mt-5 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3","children":["$","$L9",null,{"className":"inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent px-4 py-3 text-sm font-semibold text-blue-600 hover:text-blue-800 disabled:pointer-events-none disabled:opacity-50 sm:w-auto ","href":"/","children":[["$","svg",null,{"className":"h-4 w-4 flex-shrink-0","xmlns":"http://www.w3.org/2000/svg","width":"24","height":"24","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"2","stroke-linecap":"round","stroke-linejoin":"round","children":["$","path",null,{"d":"m15 18-6-6 6-6"}]}],"ホームに戻る"]}]}]]}],"notFoundStyles":[],"styles":null}],["$","footer",null,{"className":"mx-auto mt-auto w-full max-w-[85rem] border-t-2 border-gray-400 px-4 py-10 sm:px-6 lg:px-8","children":["$","div",null,{"className":"text-center","children":[["$","$L9",null,{"href":"/","className":"mx-auto block max-w-fit p-3 text-xl font-semibold text-black","children":"Maze Solver 3D - 1260277"}],["$","div",null,{"className":"m-3 text-gray-500","children":["2024 高知工科大学 情報学群 浅野友哉 1260277.",["$","span",null,{"className":"pl-2","children":"|"}],["$","a",null,{"href":"https://github.com/mosunset/maze_solver_3d","target":"_blank","rel":"noopener noreferrer","className":"p-4 pl-2 font-semibold text-blue-600 transition hover:text-orange-400 hover:underline hover:underline-offset-1","children":"GitHub"}]]}]]}]}]]}]]}],null]],[[["$","link","0",{"rel":"stylesheet","href":"/260277p/maze_solver_3d/_next/static/css/323ec29313b5ced3.css","precedence":"next","crossOrigin":""}]],"$La"]]]]
 a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Code | Maze Solver 3D - 1260277"}],["$","meta","3",{"name":"description","content":"情報科学応用最終課題説明ページ - Processingで作った3D迷路ゲームの解説"}],["$","link","4",{"rel":"icon","href":"/260277p/maze_solver_3d/favicon.ico","type":"image/x-icon","sizes":"16x16"}]]
 1:null

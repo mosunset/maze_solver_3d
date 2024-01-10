@@ -22,7 +22,8 @@
 a {
   cursor: pointer;
 }
-a * {
+a *,
+details * {
   cursor: pointer;
 }
 code {
@@ -36,9 +37,10 @@ code {
     Meiryo,
     monospace;
 }
-#description * {
+#description {
   margin: 6px;
 }
+
 body {
   min-width: 370px;
   color: rgb(var(--foreground-rgb));

@@ -42,10 +42,4 @@ void draw() {
     ui.mini_maze(stage.get_stage_anser(),stage.get_distance());
     ui.fps();
     ui.level(stage.get_x(),stage.get_y(),stage.get_load(),stage.get_distance());
-
 }
-
-
-// https://algoful.com/Archive/Algorithm/MazeDig
-// https://qiita.com/naru_1017/items/e4d017433372a313aeb3
-// https://stone-program.com/python/algorithm/a-star-introduction/
