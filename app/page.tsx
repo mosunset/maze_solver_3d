@@ -10,7 +10,7 @@ import { split, all } from "@/libs/split_code";
 import Code from "./code/page";
 
 const Home = () => {
-  const files = ["maze", "maze_generation", "ui"];
+  const files = ["maze", "maze_generation", "ui", "userinput"];
   const file0 = path.join(process.cwd(), `maze/${files[0]}.pde`);
   const file1 = path.join(process.cwd(), `maze/${files[1]}.pde`);
   const file2 = path.join(process.cwd(), `maze/${files[2]}.pde`);

@@ -8,7 +8,7 @@ import { readFileSync } from "fs";
 import path from "path";
 
 const loadFiles = () => {
-  const files = ["maze", "maze_generation", "ui"];
+  const files = ["maze", "maze_generation", "ui", "userinput"];
 
   return files.map((file, index) => {
     const filepath = path.join(process.cwd(), `maze/${file}.pde`);
