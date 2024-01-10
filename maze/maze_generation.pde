@@ -118,7 +118,7 @@ public class Maze_Generation{
         startNode.setH(0);
         startNode.setF(0);
 
-        Node endNode = new Node(null, end[0], end[1]);
+        Node endNode = new Node(null, end[1], end[0]);
         endNode.setG(0);
         endNode.setH(0);
         endNode.setF(0);

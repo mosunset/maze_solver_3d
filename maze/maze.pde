@@ -2,6 +2,7 @@
 
 Maze_Generation stage;
 Ui ui;
+Userinput userinput = new Userinput();
 
 void settings() {
     // settings()関数は、Processingスケッチが初期化されるときに呼び出されます。
@@ -11,7 +12,7 @@ void settings() {
     randomSeed(1);
 
     // 5以上の奇数
-    stage = new Maze_Generation(37);
+    stage = new Maze_Generation(23);
     ui = new Ui();
 }
 
@@ -31,15 +32,26 @@ void draw() {
     strokeWeight(0);
     if (i == 0) {
         if (mousePressed) {
-            stage = new Maze_Generation(37);
+            stage = new Maze_Generation((int)random(5, 23),(int)random(5, 23));
         }
     }
     i++;
-    if (i > 30) {
+    if (i > 10) {
         i = 0;
     }
     //ui.mini_maze(stage.get_stage());
     ui.mini_maze(stage.get_stage_anser(),stage.get_distance());
-    ui.fps();
+    ui.uptext();
     ui.level(stage.get_x(),stage.get_y(),stage.get_load(),stage.get_distance());
+    ui.uiupdate();
+    ui.keyinputui(userinput.get_key());
+}
+
+void keyPressed() {
+    // キーが押された瞬間の処理
+    userinput.keyin(keyCode);
+}
+
+void keyReleased() {
+    userinput.keyrelese(keyCode);
 }
