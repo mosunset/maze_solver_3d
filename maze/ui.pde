@@ -4,6 +4,12 @@ public class Ui{
 
     public Ui() {}
 
+    void view_ray2(ArrayList<Ray2> walls) {
+        for (Ray2 wall : walls) {
+            line(wall.begin().x, wall.begin().y, wall.end().x, wall.end().y);
+        }
+    }
+
     public void uiupdate() {
         if (mousePressed) {
             stroke(0,150);
@@ -16,7 +22,7 @@ public class Ui{
     }
 
     public void uptext() {
-        String uptext = "FPS:" + nf(frameRate, 0, 2) + " TIME:"+nf(millis()/1000.0, 0, 2);
+        String uptext = "FPS:" + nf(frameRate, 0, 2) + " TIME:" + nf(millis() / 1000.0, 0, 2);
         text(uptext , margin, margin * 2);
     }
 
@@ -30,7 +36,7 @@ public class Ui{
     public void mini_maze(int[][] stage,int distance) {
         int x = stage.length;
         int y = stage[0].length;
-        strokeWeight(1);
+        strokeWeight(0);
         stroke(150,150,150);
         for (int i = 0; i < y; i++) {
             for (int j = 0; j < x; j++) {
@@ -51,6 +57,7 @@ public class Ui{
                 rect(j * map_width + margin, i * map_width + margin * 3, map_width, map_width);
             }
         }
+        strokeWeight(1);
     }
     public void keyinputui(boolean[] keys) {
         int key_margin = 16;
